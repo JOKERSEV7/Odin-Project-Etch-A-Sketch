@@ -14,18 +14,21 @@
     <body>
         <div class="flex-container">
             <div class="title"><h1>Eatch-A-Sketch</h1></div>
+            <div class="mode">Pen : On</div>
             <div class="content">
                 <div class="board"></div>
-                <div class="button">
-                    <button>Black</button>
-                    <button>White</button>
-                    <button>Random</button>
-                    <button>Reset</button>
+                <div class="buttons">
+                    <button class="blackbutton" onclick="changeColor('black')">Black</button>
+                    <button class="whitebutton" onclick="changeColor('White')">Erasor</button>
+                    <button class="graybutton" onclick="changeColor('gray')">Gray</button>
+                    <button class="randombutton" onclick="changeColor('random')">Random</button>
+                    <button class="resetbutton" onclick="resetBoard()">Reset</button>
                 </div>
                 <div>
-                    <input type="text" placeholder="Size of Board" value="16">
+                    <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)"/>
                     <button>Set Size</button>
                 </div>
+                <div class="errormsg">Size need to be between 2 and 100!</div>
             </div>
         </div>
 
